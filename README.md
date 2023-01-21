@@ -1,6 +1,6 @@
 #Enkripsi-Deskripsi File Mengunakan Kriptografi Fernet
 
-Pastikan Anda Menyimpan key nya. Kalau Key Anda Hilang Maka File Anda Tidak Dapat di Deskripsi
+Pastikan Anda Menyimpan key nya. Jika Key Anda Hilang Maka File Anda Tidak Dapat di Deskripsi
 
 #Cara Pengunaannya
 
