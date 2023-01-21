@@ -36,7 +36,7 @@ def deskripsi(key, folder_path):
         return
 
     try:    
-        folder_path = input("Input Folder Yang Ingin Dideskripsi :")
+        folder_path = input("Input Folder Yang Ingin Dideskripsi, misal(D:\path\Folder) :")
         if os.path.isdir(folder_path):
             for root, dirs, files in os.walk(folder_path):
                 for file in files:
@@ -63,7 +63,7 @@ def enkripsi_file(folder_key, file_path):
         cipher = Fernet(key)
         print("Key Berhasil Dibuat....")
 
-    file_path = input("Input Path File Yang Ingin Di Enkripsi, Misal(D:\path\File.jpg) :")
+    file_path = input("Input Path File Yang Ingin Di Enkripsi, Misal(D:\path\File.txt) :")
     if os.path.exists(file_path):
         with open(file_path, "rb") as file:
             data = file.read()
@@ -84,7 +84,7 @@ def deskripsi_file(key, file_path):
         print("Key Tidak Valid....!!")
         return
     try:
-        file_path = input("Input File Yang Ingin di deskripsi, Misal(D:\path\file.jpg): ")
+        file_path = input("Input File Yang Ingin di deskripsi, Misal(D:\path\file.txt): ")
         if os.path.isfile(file_path):
             with open(file_path, "rb") as file:
                 data = file.read()
