@@ -3,6 +3,7 @@
 Pastikan Anda Menyimpan key nya. Kalau Key Anda Hilang Maka File Anda Tidak Dapat di Deskripsi
 
 #Cara Pengunaannya
+
 Enkripsi Folder
 1. Jalankan File enkripsi-deskripsi.py
 2. Pilih Enkripsi
