@@ -47,7 +47,9 @@ while True:
     keluar = input("Apakah Anda Ingin Keluar Dari Program(y/n)?? ")
     if keluar == "y":
         print("Anda Keluar Dari Program, bye bye....")
-        break    
+        break 
+    elif keluar == "n":
+        print("lanjut")
     else:
         print("Inputan Tidak Valid")
 
