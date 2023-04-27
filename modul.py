@@ -1,7 +1,7 @@
 from cryptography.fernet import Fernet
 import os
 
-def enkripsi(folder_key, folder_path):
+def enkripsi():
 # input untuk file tempat key
     folder_key = input("Buat Nama File Untuk Menyimpan Key, Misal(key.key) : ")
     key = Fernet.generate_key()
@@ -18,16 +18,16 @@ def enkripsi(folder_key, folder_path):
                     file_path = os.path.join(root, file)
                     with open(file_path, 'rb') as f:
                         data = f.read()
-                        # enkripsi
                         encrypted_data = cipher.encrypt(data)
                     with open(file_path, 'wb') as f:
                         f.write(encrypted_data)
-                        print("Semau File di Dalam Folder Berhasil Di Enkripsi....")
+                        print("proses...........")
+            print("Semau File di Dalam Folder Berhasil Di Enkripsi....")
     else:
         print("Path Folder Tidak Valid.....!!!")
             
 
-def deskripsi(key, folder_path):
+def deskripsi():
     key = input("Input Key Yang Sudah Anda Buat Saat Melakukan Enkripsi(buka file key anda lalu copas disini) : ")
     try:
         cipher = Fernet(key)
@@ -36,7 +36,7 @@ def deskripsi(key, folder_path):
         return
 
     try:    
-        folder_path = input("Input Folder Yang Ingin Dideskripsi, misal(D:\path\Folder) :")
+        folder_path = input("Input Folder Yang Ingin Dideskripsi :")
         if os.path.isdir(folder_path):
             for root, dirs, files in os.walk(folder_path):
                 for file in files:
@@ -46,16 +46,17 @@ def deskripsi(key, folder_path):
                         decrypted_data = cipher.decrypt(data)
                     with open(file_path, 'wb') as f:
                         f.write(decrypted_data)
-                        print("Deskripsi Berhasil.....")
+                        print("proses...........")
+                print("Deskripsi Berhasil.....")
         else:
             print("Path Folder Anda Tidak Valid..!!!")
     except:
         print("Deskripsi File Gagal....!!!")
-        print("Key Yang Anda Masukan Salah....!!!")
+        print("Key Yang Anda Masukan Tidak Valid....!!!")
     
         
 
-def enkripsi_file(folder_key, file_path):
+def enkripsi_file():
     folder_key = input("Buat Nama File Untuk Menyimpan Key, Misal(key.key) : ")
     key = Fernet.generate_key()
     with open(folder_key, 'wb') as key_file:
@@ -63,7 +64,7 @@ def enkripsi_file(folder_key, file_path):
         cipher = Fernet(key)
         print("Key Berhasil Dibuat....")
 
-    file_path = input("Input Path File Yang Ingin Di Enkripsi, Misal(D:\path\File.txt) :")
+    file_path = input("Input Path File Yang Ingin Di Enkripsi, Misal(D:\path\File.jpg) :")
     if os.path.exists(file_path):
         with open(file_path, "rb") as file:
             data = file.read()
@@ -76,7 +77,7 @@ def enkripsi_file(folder_key, file_path):
     else:
         print("Path File Tidak Valid....!!!")
 
-def deskripsi_file(key, file_path):
+def deskripsi_file():
     key = input("Input Key Yang Sudah Anda Buat Saat Melakukan Enkripsi : ")
     try:   
         cipher = Fernet(key)
@@ -84,7 +85,7 @@ def deskripsi_file(key, file_path):
         print("Key Tidak Valid....!!")
         return
     try:
-        file_path = input("Input File Yang Ingin di deskripsi, Misal(D:\path\file.txt): ")
+        file_path = input("Input File Yang Ingin di deskripsi, Misal(D:\path\File.jpg): ")
         if os.path.isfile(file_path):
             with open(file_path, "rb") as file:
                 data = file.read()
@@ -99,4 +100,3 @@ def deskripsi_file(key, file_path):
         print("Deskripsi File Gagal....!!!")
         print("Key Yang Anda Masukan Salah....!!!")
                 
-
