@@ -1,14 +1,14 @@
 import modul
 import os
 
-
-while True:
+keluar = ""
+while keluar != "y":
     os.system("cls" if os.name == "nt" else "clear")
     print("="*30)
     print("Pilih Menu:")
     print("0. Keluar")
     print("1. Enkripsi")
-    print("2. Deskripsi")
+    print("2. Dekripsi")
     print("="*30)
 
     menu = input("Input Menu : ")
@@ -23,34 +23,28 @@ while True:
         print("="*30)
         pilihan = input("Input Enkripsi Yang Anda Inginkan(1/2): ")
         if pilihan == "1":
-            modul.enkripsi("folder_key", "folder_path")
+            modul.enkripsi()
         elif pilihan == "2":
-            modul.enkripsi_file("folder_key", "file_path")
+            modul.enkripsi_file()
         else:
             print("Inputan Tidak Valid...!!!!")
 
     elif menu == "2":
         print("="*30)
-        print("1. Deskripsi Folder")
-        print("2. Deskripsi File")
+        print("1. Dekripsi Folder")
+        print("2. Dekripsi File")
         print("="*30)
-        pilih = input("Input Deskripsi Yang Anda Inginkan(1/2): ")
+        pilih = input("Input Dekripsi Yang Anda Inginkan(1/2): ")
         if pilih == "1":
-            modul.deskripsi("folder_key", "folder_path")
+            modul.deskripsi()
         elif pilih == "2":
-            modul.deskripsi_file("key", "file_path")
+            modul.deskripsi_file()
         else:
             print("Inputan Tidak Valid...!!!!")
 
     else:
         print("Inputan Tidak Valdi!!!!")
     keluar = input("Apakah Anda Ingin Keluar Dari Program(y/n)?? ")
-    if keluar == "y":
-        print("Anda Keluar Dari Program, bye bye....")
-        break 
-    elif keluar == "n":
-        print("lanjut")
-    else:
-        print("Inputan Tidak Valid")
+    
 
 
